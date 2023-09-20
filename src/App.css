@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+
+* {
+  font-family: 'Manrope', sans-serif;
+  color: hsl(225, 20%, 60%);
+  font-size: 14px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.heading-container {
+  background-image: url(./assets/icons/pattern-circles.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.heading-container h1 {
+  color: hsl(227, 35%, 25%);
+  font-size: 20px;
+}
+
+.heading-container p {
+  font-size: 12px;
+  margin: 3px;
+}
+
+section {
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-image: url(./assets/icons/bg-pattern.svg);
+  background-color: hsl(230, 100%, 99%);
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+article {
+  width: 85%;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 10px 10px hsla(231, 16%, 92%, 0.853);
+  padding-top: 35px;
+  padding-bottom: 35px;
+  height: fit-content;
+}
+
+.grid-container,
+.price-slider-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.price-slider-container p {
+  letter-spacing: 0.07rem;
+  margin: 0px;
+}
+
+.slider {
+  width: 80%;
+  height: 8px;
+  border-radius: 4px;
+  background-color: hsl(224, 65%, 95%);
+  position: relative;
+  cursor: grab;
+}
+
+.progress-bar {
+  height: 8px;
+  width: 50%;
+  background-color: hsl(174, 77%, 80%);
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  border-radius: inherit;
+}
+
+.progress-bar > div {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  background-color: hsl(174, 86%, 45%);
+  box-shadow: 0px 20px 20px hsla(174, 100%, 54%, 0.542);
+  position: absolute;
+  top: -14px;
+  right: -18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.price-container,
+.billing-period,
+.yearly-discount {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price-container > span:first-of-type {
+  font-size: 30px;
+  font-weight: 800;
+  color: hsl(227, 35%, 25%);
+}
+
+.billing-period div,
+.billing-period span {
+  font-size: 12px;
+}
+
+.yearly-toggle {
+  height: 22px;
+  width: 44px;
+  background-color: hsl(223, 50%, 87%);
+  border-radius: 11px;
+  padding: 3px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.yearly-toggle > div {
+  background-color: white;
+  height: 100%;
+  width: 16px;
+  border-radius: 100%;
+}
+
+.yearly-discount > div {
+  font-size: 10px;
+  padding: 2px 7px 2px 7px;
+  background-color: hsl(14, 92%, 95%);
+  color: hsl(15, 100%, 70%);
+  border-radius: 8px;
+}
+
+.features-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  border-top: 1px solid hsl(222, 57%, 95%);
+  padding-top: 15px;
+}
+
+.features-container ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 0;
+}
+
+.features-container ul li {
+  font-size: 12px;
+}
+
+.features-container ul svg {
+  padding-right: 20px;
+}
+
+.features-container button {
+  background-color: hsl(227, 35%, 25%);
+  border: none;
+  height: 40px;
+  width: 160px;
+  border-radius: 19px;
+  color: hsl(226, 100%, 87%);
+  font-size: 12px;
+}
+
+
+@media screen and (min-width: 600px) {
+  article {
+    max-width: 500px;
+  }
+
+  .price-slider-container {
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .price-slider-container :nth-child(1) {
+    order: 1;
+  }
+
+  .price-slider-container :nth-child(2) {
+    order: 3;
+    grid-column: 1 / 3;
+  }
+
+  .price-slider-container :nth-child(3) {
+    order: 2;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .features-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 30px 0px 30px;
+    box-sizing: border-box;
+  }
+}
